@@ -7,8 +7,7 @@ import com.mb.entity.Product;
 
 public interface ProductService
 {
-//
-//	public List<Product> search(String keyword);
+	public List<Product> search(String keyword);
 
 	public Product save(ProductDto product);
 

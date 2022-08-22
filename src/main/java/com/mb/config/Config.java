@@ -10,7 +10,7 @@ import com.mb.audit.AuditorAwareImpl;
 
 @Configuration
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
-public class ModelMapperConfig
+public class Config
 {
 	@Bean
 	public ModelMapper modelMapper()

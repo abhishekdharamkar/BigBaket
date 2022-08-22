@@ -20,16 +20,18 @@ public class ProductServiceImpl implements ProductService
 	
 	@Autowired
 	private ProductDao productDao;
+	@Autowired
+	private ProductRepository productRepo;
 
-//	@Override
-//	public List<Product> search(String keyword)
-//	{
-//		if (keyword != null)
-//		{
-//			return productRepo.search(keyword);
-//		}
-//		return productRepo.findAll();
-//	}
+	@Override
+	public List<Product> search(String keyword)
+	{
+		if (keyword != null)
+		{
+			return productRepo.search(keyword);
+		}
+		return productRepo.findAll();
+	}
 
 	@Override
 	public Product save(ProductDto productDto)
