@@ -1,19 +1,21 @@
 package com.mb.dto;
 
-import javax.validation.constraints.NotEmpty;
+import java.util.Date;
+
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class CartDto
 {
 	
-	@NotEmpty
+	@NotBlank
 	private String email;
 	
-	@NotEmpty
+	@NotBlank
 	private String items;
 	
-	@NotEmpty
-	private String date;
+	@NotBlank
+	private Date date;
 	
 	@NotNull
 	private double total;
@@ -30,7 +32,7 @@ public class CartDto
 		return items;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 

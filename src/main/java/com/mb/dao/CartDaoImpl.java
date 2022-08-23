@@ -22,7 +22,7 @@ public class CartDaoImpl implements CartDao {
 
 	@Override
 	public Cart save(CartDto cartDto) {
-		Cart newCart = new Cart();
+		Cart newCart;
 		newCart = modelMapper.map(cartDto, Cart.class);
 		try {
 			return cartRepository.save(newCart);

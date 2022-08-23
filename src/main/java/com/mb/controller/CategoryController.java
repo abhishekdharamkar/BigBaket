@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mb.entity.Category;
-import com.mb.entity.Product;
+import com.mb.dto.CategoryDto;
+
 import com.mb.response.ResponseMaker;
 import com.mb.response.SuccessResponse;
 import com.mb.service.CategoryService;
@@ -24,9 +24,9 @@ public class CategoryController extends BaseController {
 	private ResponseMaker responseMaker;
 	
 	@PostMapping(CATEGORY)
-	public ResponseEntity<SuccessResponse<String>> category(@RequestBody Category p)
+	public ResponseEntity<SuccessResponse<String>> category(@RequestBody CategoryDto categoryDto)
 	{
-		 category.save(p);
+		category.save(categoryDto);
 		return responseMaker.successResponse("saved", HttpStatus.CREATED);
 	}
 }

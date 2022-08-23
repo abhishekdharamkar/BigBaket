@@ -1,8 +1,8 @@
 package com.mb.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mb.audit.Auditable;
 
 @Entity
@@ -22,15 +21,15 @@ public class Product extends Auditable
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Column(name="productname")
 	private String productname;
 
+	@Column(name="productprice")
 	private double productprice;
 	
 	private String imageUrl;
 
-//	@JsonIgnore
-//	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-//	@JoinColumn(name = "category_id", nullable = false)
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "category_id", nullable = false, updatable = false)
 	private Category category;

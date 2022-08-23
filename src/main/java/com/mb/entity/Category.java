@@ -1,19 +1,13 @@
 package com.mb.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name="category")
@@ -24,9 +18,7 @@ public class Category {
     @Column
     private long id;
     
-    @NotEmpty
-    @Column
-    @Size (max = 25)
+    @Column(name="name")
     private String name;
   //Here mappedBy indicates that the owner is in the other side
 //    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)

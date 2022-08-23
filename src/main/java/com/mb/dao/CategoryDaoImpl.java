@@ -15,11 +15,11 @@ public class CategoryDaoImpl implements CategoryDao{
 	private CategoryRepository categoryRepo;
 	
 	@Override
-	public String save(Category c) {
+	public Category save(Category c) {
 		try {
 			
-			categoryRepo.save(c);
-			return "save";
+		return categoryRepo.save(c);
+		
 			
 		}catch(Exception e) {
 			throw new CustomException("Error while saving Category", ErrorCode.INTERNAL_SERVER_ERROR);

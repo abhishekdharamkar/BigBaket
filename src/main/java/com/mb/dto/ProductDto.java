@@ -1,5 +1,6 @@
 package com.mb.dto;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -7,12 +8,13 @@ import com.mb.entity.Category;
 
 public class ProductDto
 {
-	@NotEmpty(message = "Name is mandatory")
+	@NotBlank(message = "Name is mandatory")
 	private String productname; //need to change the name
 
 	@NotNull
 	private double productprice;
 
+	@NotNull
 	private long categoryId;
 	
 	private String imageUrl;

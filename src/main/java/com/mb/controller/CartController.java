@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mb.dto.CartDto;
-import com.mb.entity.Cart;
 import com.mb.response.ResponseMaker;
 import com.mb.response.SuccessResponse;
 import com.mb.service.CartService;
@@ -24,9 +23,9 @@ public class CartController extends BaseController {
 	private ResponseMaker responseMaker;
 	
 	@PostMapping(CHECKOUT)
-	public ResponseEntity<SuccessResponse<Cart>> Checkout(@RequestBody CartDto cartDto) {
+	public ResponseEntity<SuccessResponse<String>> Checkout(@RequestBody CartDto cartDto) {
 		
-		Cart cart= cartService.save(cartDto);
-		return responseMaker.successResponse(cart, HttpStatus.CREATED);
+		cartService.save(cartDto);
+		return responseMaker.successResponse("success", HttpStatus.CREATED);
 	}
 }

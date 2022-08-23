@@ -1,35 +1,40 @@
 package com.mb.entity;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.mb.controller.BaseController;
-
 @Entity
 @Table(name="carts")
-public class Cart extends BaseController {
+public class Cart {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Column(name="email")
 	private String email;
 	
+	@Column(name="items")
 	private String items;
 	
+	@Column(name="total")
 	private double total;
 	
-	private String date;
+	@Column(name="date")
+	private Date date;
 	
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
