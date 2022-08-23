@@ -30,11 +30,11 @@ public class ProductServiceImpl implements ProductService
 	private CategoryRepository categoryRepository;
 
 	@Override
-	public List<Product> search(String keyword)
+	public List<Product> search(String name)
 	{
-		if (keyword != null)
+		if (name != null)
 		{
-			return productRepo.search(keyword);
+			return productRepo.findByProductname(name);
 		}
 		return productRepo.findAll();
 	}

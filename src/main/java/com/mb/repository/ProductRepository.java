@@ -9,7 +9,7 @@ import com.mb.entity.Product;
 public interface ProductRepository extends JpaRepository<Product, Long>
 {
 	@Query("SELECT p FROM Product p WHERE CONCAT(p.productname) LIKE %?1%")
-	public List<Product> search(String keyword);
+	public List<Product> findByProductname(String name);
 
 	
 }
